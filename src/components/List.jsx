@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -7,7 +7,6 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { motion } from "framer-motion";
 import Modal from 'react-modal';
-import {List} from './components/List'
 
 export const List=({people,setPeople})=>{
   const [modalIsOpen,setIsOpen]=useState(false)
@@ -17,7 +16,7 @@ export const List=({people,setPeople})=>{
     setImgUrl(e.target.src)
     setIsOpen(true)
   };
-  const closeModale=()=>{
+  const closeModal=()=>{
     setIsOpen(false);
   }
   const handleDelete=(e)=>{
@@ -74,7 +73,6 @@ export const List=({people,setPeople})=>{
         </div>
         <Modal
         isOpen={modalIsOpen}
-        onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
         style={customStyles}
       >
